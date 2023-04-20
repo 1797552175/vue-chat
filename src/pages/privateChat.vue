@@ -153,7 +153,7 @@ export default {
 		getMsgBySocket() {
 			socket.removeAllListeners('getPrivateMsg');
 			socket.on('getPrivateMsg', (data) => {
-				console.log('聊天内获取私聊消息', data);
+				console.log('socket监听到的消息', data);
 				//如果收到的soket信息不是发给自己的 放弃这条soket 没必要了 因为私聊是点对点发送的
 				// if(data.to_user != this.fromUserInfo.user_id) return
 				//如果收到的soket信息不是来自当前聊天者 写入首页信息列表 并return

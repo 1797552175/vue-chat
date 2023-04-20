@@ -1,0 +1,5 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>airchat</title><script src="http://at.alicdn.com/t/font_541713_6k7oo8m50xu323xr.js"></script><link href="/static/css/app.013798ba352e0b6445e9bab0a7c27c8c.css" rel="stylesheet"></head><body><div id="app"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script><script>const socket = io("45.136.186.133:3000");
+      const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      if (userInfo) {
+        socket.emit("update", userInfo.user_id);
+      }</script><script type="text/javascript" src="/static/js/manifest.5711209b374c1f12ba19.js"></script><script type="text/javascript" src="/static/js/vendor.c9c1cfb578d38e5c8289.js"></script><script type="text/javascript" src="/static/js/app.e15e02fead2b6b1e0967.js"></script></body></html>

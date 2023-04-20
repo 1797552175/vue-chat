@@ -6,6 +6,15 @@ const { query } = require("./utils/db");
 const socketModel = require("./models/soketHander");
 const app = new Koa();
 
+const static = require('koa-static') //静态资源服务插件
+const path = require('path') //路径管理
+
+// 配置静态资源
+const staticPath = '../dist'
+app.use(static(
+	path.join(__dirname, staticPath)
+))
+
 app.use(cors());
 
 const server = require("http").createServer(app.callback());

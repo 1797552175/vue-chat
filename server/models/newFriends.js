@@ -3,7 +3,7 @@ const { query } = require("../utils/db");
 // 获取我的新好友通知
 let getnewFriends = function(to_user) {
   const _sql =
-    "SELECT n.from_user , n.to_user , n.content, n.status , n.time , u.avator ,u.sex ,u.name FROM (select * from new_friends order by time desc) as n  inner join  user_info as u on n.from_user = u.id  WHERE  n.to_user = ? group by  n.from_user";
+    "SELECT n.from_user , n.to_user , n.content, n.status , n.time , u.avator ,u.sex ,u.name FROM (select * from new_friends order by time desc) as n  inner join  user_info as u on n.from_user = u.id  WHERE  n.to_user = ?";
   return query(_sql, [to_user]);
 };
 
